@@ -1,0 +1,129 @@
+body {
+  height: 100vh;
+  main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background: $background-gradient;
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 250px;
+      width: 600px;
+      background: $background-gradient-qrcode;
+      border-radius: 5px;
+      box-shadow: 1px 2px 10px rgba(#000, 0.3);
+      gap: 30px;
+      transition: 0.7s;
+
+      .QRCode {
+        text-align: center;
+        width: 85%;
+        
+        .text-header {
+          h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+          }
+          p {
+            margin-bottom: 10px;
+            position: relative;
+            
+            i {
+              position: absolute;
+              margin-left: 5px;
+              animation: loop 1s ease infinite;
+            }
+          }
+        }
+        .form-qrcode {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          
+          input {
+            padding: 10px;
+            border-radius: 2px;
+            font-size: 1rem;
+            background: transparent;
+            border-bottom: 2px solid $border-bottom;
+          }
+        }
+      }// end qrcode
+
+      .image-qrcode {
+        display: none;
+      }
+      
+      &.active {
+        height: 300px;
+        width: 700px;
+
+
+        .QRCode {
+          width: 60%;
+        }
+        
+        .image-qrcode {
+
+          &.active {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background: $background-gradient;
+          padding: 10px 15px 20px;
+          border-radius: 5px;
+          text-align: center;
+          animation: divImagem 1s ease-in;
+          
+            .image {
+              padding: 5px;
+              border: 1px solid #ccc;
+            }
+
+            .image-text {
+              p {
+                color: $text-font;
+                font-size: 1.2rem;
+                font-weight: bold;
+              }
+              
+              i {
+                font-size: 2rem;
+              }
+            }
+          }//end active
+        }//end image-qrcode
+      }//End Active
+
+      @keyframes divImagem {
+        0%{
+          opacity: 0;
+        }
+        25% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.6;
+        }
+        100% {
+          opacity: 1;
+        }
+      }//animation divImagem
+      @keyframes loop {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+        100% {
+          transform: translateY(2px);
+        }
+      }
+    }//end wrapper
+  } //end main
+}//end body

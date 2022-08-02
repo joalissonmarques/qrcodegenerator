@@ -1,0 +1,43 @@
+@media screen and (max-width: 720px) {
+  body {
+    main { 
+      .wrapper {
+        width: 90%;
+        .QRCode {
+          .text-header {
+            h1 {
+              font-size: 2rem;
+              margin-bottom: 5px;
+            }
+          }
+        }// end qrcode       
+        &.active {
+          width: 95%;
+          .QRCode {
+            width: 50%;
+          }
+        }//End Active
+      }//end wrapper
+    } //end main
+  }//end body
+}
+
+@media screen and (max-width: 460px) {
+  
+  body {
+    main {
+      .wrapper {
+        flex-direction: column;
+        height: 450px;   
+        &.active {
+          height: 600px;
+          width: 90%;
+
+          .QRCode {
+            width: 80%;
+          }
+        }//end active
+      }//end wrapper
+    } //end main
+  }//end body
+}
